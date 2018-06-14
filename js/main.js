@@ -12,3 +12,17 @@ var config = {
   // Connect to Database
 var database = firebase.database();
 
+//populate with user input later
+var reservationData = {}
+
+//get user's reservation day
+$('.reservation-day li').on('click', function() {
+  reservationData.day = $(this).text();
+});
+
+//get user's reservation name
+$('.reservation-name').on('submit', function(e) {
+	e.preventDefault();
+	reservationData.name = $(this).value();
+});
+
