@@ -50,3 +50,19 @@ $('.reservations').on('submit', function(e) {
 //}
 //getReservations();
 
+//Google Maps API
+function initMap() {
+	var map = new google.maps.Map(document.getElementById("map"), {
+    center: {lat: 40.8054491, lng: -73.9654415},
+    zoom: 16,
+    scrollwheel: false,
+    styles: [{"featureType":"landscape","stylers":[{"color":"#f5d23b"}]},{"featureType": "water","elementType":"geometry.fill","stylers":[{"color":"#1411c8"}]}]
+
+});
+
+ var marker = new google.maps.Marker({
+            position: {lat: 40.8054491, lng: -73.9654415},
+            map: map,
+            title: 'Monks Café'
+        });
+}
