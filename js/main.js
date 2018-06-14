@@ -21,13 +21,11 @@ $('.reservation-day li').on('click', function() {
 });
 
 //get user's reservation name
-$('.reservation-name').on('submit', function(e) {
+$('.reservations').on('submit', function(e) {
 	e.preventDefault();
-	reservationData.name = $(this).value();
-
-	var reservationsReference = database.ref('reservations');
-  
-    reservationsReference.push(reservationData);
+	reservationData.name = $('.reservation-name').val();
+//post info to Firebase
+	database.ref('reservations').push(reservationData);
 });
 
-//post info to Firebase
+
