@@ -28,4 +28,5 @@ $('.reservations').on('submit', function(e) {
 	database.ref('reservations').push(reservationData);
 });
 
+//code to display reservations with handlebars
 
