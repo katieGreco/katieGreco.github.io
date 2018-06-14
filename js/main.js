@@ -29,4 +29,24 @@ $('.reservations').on('submit', function(e) {
 });
 
 //code to display reservations with handlebars
+function getReservations() {
+	database.ref('reservations').on('value', function (result) {
+   
+   var reservationList = $('.reservation-list');
+   var reservations = result.val();
+    $('#reservation').empty();
+
+   // var context = {
+    //	name: allReservations[reservation].name,
+    //	day: allReservations[reservation].day,
+    //	reservationID: reservation
+   // };
+
+    var source = $('#reservation-template').html();
+    var template = Handlebars.compile(source);
+    var reservationListItem = template(reservations);
+    $reservationList.append(reservationListItem);
+    });
+}
+getReservations();
 
