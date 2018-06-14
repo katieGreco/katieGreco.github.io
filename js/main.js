@@ -30,10 +30,10 @@ $('.reservations').on('submit', function(e) {
 
 //code to display reservations with handlebars
 //function getReservations() {
-	database.ref('reservations').on('value', function(result) {
+	database.ref('reservations').on('child_added', function(list) {
    
    var reservationList = $('.reservation-list');
-   var reservations = result.val();
+   var reservations = list.val();
    // $('#reservation').empty();
 
    // var context = {
