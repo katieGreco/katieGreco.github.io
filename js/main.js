@@ -29,8 +29,8 @@ $('.reservations').on('submit', function(e) {
 });
 
 //code to display reservations with handlebars
-function getReservations() {
-	database.ref('reservations').on('value', function (result) {
+//function getReservations() {
+	database.ref('reservations').on('value', function(result) {
    
    var reservationList = $('.reservation-list');
    var reservations = result.val();
@@ -42,11 +42,11 @@ function getReservations() {
     //	reservationID: reservation
    // };
 
-    var source = $('#reservation-template').html();
+    var source = $("#reservation-template").html();
     var template = Handlebars.compile(source);
     var reservationListItem = template(reservations);
     reservationList.append(reservationListItem);
     });
-}
-getReservations();
+//}
+//getReservations();
 
