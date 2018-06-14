@@ -34,7 +34,7 @@ function getReservations() {
    
    var reservationList = $('.reservation-list');
    var reservations = result.val();
-    $('#reservation').empty();
+   // $('#reservation').empty();
 
    // var context = {
     //	name: allReservations[reservation].name,
@@ -45,7 +45,7 @@ function getReservations() {
     var source = $('#reservation-template').html();
     var template = Handlebars.compile(source);
     var reservationListItem = template(reservations);
-    $reservationList.append(reservationListItem);
+    reservationList.append(reservationListItem);
     });
 }
 getReservations();
